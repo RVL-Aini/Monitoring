@@ -1,0 +1,66 @@
+modules = ["kotlin"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Android App"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Android Build"
+
+[[workflows.workflow]]
+name = "Android App"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = """
+
+    export JAVA_HOME=/nix/store/1jm9fvrqrry22z9kgqa0v55nnz0jsk09-openjdk-11.0.23+9 && 
+    ./gradlew :app:installDebug
+    """
+
+[[workflows.workflow]]
+name = "Android Build"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = """
+
+    export JAVA_HOME=/nix/store/1jm9fvrqrry22z9kgqa0v55nnz0jsk09-openjdk-11.0.23+9 && 
+    chmod +x ./gradlew && 
+    mkdir -p gradle/wrapper && 
+    curl -o gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v7.6.0/gradle/wrapper/gradle-wrapper.jar && 
+    ./gradlew :app:assembleDebug test
+    """
+
+[deployment]
+run = ["sh", "-c", """
+
+    export JAVA_HOME=/nix/store/1jm9fvrqrry22z9kgqa0v55nnz0jsk09-openjdk-11.0.23+9 && 
+    ./gradlew :app:installDebug
+    """]

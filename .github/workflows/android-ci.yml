@@ -28,7 +28,7 @@ jobs:
         run: ls -lR
 
       - name: Сборка проекта
-        run: chmod +x gradlew && ./gradlew assembleDebug
+        run: chmod +x gradlew && Monitoring/gradlew assembleDebug
 
       - name: Запуск тестов
         run: gradlew test

@@ -31,7 +31,7 @@ jobs:
         run: ls -l
 
       - name: Дать права на выполнение gradlew
-        run: chmod +x $Monitoring/gradlew
+        run: chmod +x $GITHUB_WORKSPACE/gradlew
 
       - name: Сборка проекта
-        run: $Monitoring/gradlew assembleDebug
+        run: $GITHUB_WORKSPACE/gradlew assembleDebug

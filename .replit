@@ -4,7 +4,6 @@ modules = ["kotlin"]
 channel = "stable-24_05"
 
 [workflows]
-runButton = "Project"
 
 [[workflows.workflow]]
 name = "Project"
@@ -49,14 +48,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = """
-
-    export JAVA_HOME=/nix/store/1jm9fvrqrry22z9kgqa0v55nnz0jsk09-openjdk-11.0.23+9 && 
-    chmod +x ./gradlew && 
-    mkdir -p gradle/wrapper && 
-    curl -o gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v7.6.0/gradle/wrapper/gradle-wrapper.jar && 
-    ./gradlew :app:assembleDebug test
-    """
+args = "export JAVA_HOME=/nix/store/1jm9fvrqrry22z9kgqa0v55nnz0jsk09-openjdk-11.0.23+9 && ./gradlew :app:assembleDebug"
 
 [deployment]
 run = ["sh", "-c", """

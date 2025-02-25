@@ -1,5 +1,3 @@
-package com.example.your_app_name
-
 import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.Data

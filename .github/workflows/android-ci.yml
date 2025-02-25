@@ -24,6 +24,9 @@ jobs:
       - name: Установить Gradle
         uses: gradle/gradle-build-action@v2
 
+      - name: Дать права на выполнение gradlew
+        run: chmod +x gradlew
+
       - name: Сборка проекта
         run: ./gradlew assembleDebug
 

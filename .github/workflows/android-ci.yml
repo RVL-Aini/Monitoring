@@ -26,6 +26,9 @@ jobs:
 
       - name: Дать права на выполнение gradlew
         run: chmod +x gradlew
+        
+      - name: Проверить файлы в репозитории
+        run: ls -lR
 
       - name: Сборка проекта
         run: gradlew assembleDebug

@@ -1,0 +1,31 @@
+name: Android CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout код
+        uses: actions/checkout@v3
+
+      - name: Установить JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Установить Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Сборка проекта
+        run: ./gradlew assembleDebug
+
+      - name: Запуск тестов
+        run: ./gradlew test

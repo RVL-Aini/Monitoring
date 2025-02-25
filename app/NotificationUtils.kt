@@ -1,5 +1,3 @@
-package com.example.your_app_name
-
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context

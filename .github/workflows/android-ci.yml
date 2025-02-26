@@ -40,5 +40,5 @@ jobs:
         run: chmod +x $GITHUB_WORKSPACE/gradlew
         
       - name: Сборка проекта
-//      working-directory: app
+#        working-directory: app
         run: $GITHUB_WORKSPACE/gradlew assembleDebug  --debug --info --stacktrace 

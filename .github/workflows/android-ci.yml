@@ -31,7 +31,7 @@ jobs:
         run: ls -l
         
       - name: Очистить кэш Gradle
-        run: rm -rf ~/.gradle/cashes 
+        run: rm -rf /.gradle/cashes 
         
       - name: Дать права на выполнение gradlew
         run: chmod +x $GITHUB_WORKSPACE/gradlew
@@ -41,4 +41,4 @@ jobs:
         
       - name: Сборка проекта
         working-directory: app
-        run: $GITHUB_WORKSPACE/gradlew assembleDebug --stacktrace
+        run: $GITHUB_WORKSPACE/gradlew assembleDebug --info --stacktrace

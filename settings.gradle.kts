@@ -14,4 +14,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Monitoring"
-include ':app'
+include (":app")

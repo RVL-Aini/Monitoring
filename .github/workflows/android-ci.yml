@@ -31,7 +31,7 @@ jobs:
         run: ls -l
 
       - name: Вывести содержимое build.gradle
-        run: cat build.gradle
+        run: cat build.gradle.kts
         
       - name: Очистить кэш Gradle
         run: rm -rf /.gradle/cashes 

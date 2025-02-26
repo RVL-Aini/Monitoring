@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.monitor.data.Website
 import com.example.monitor.viewmodel.MonitorViewModel
+import androidx.lifecycle.ViewModel
 
 @Composable
 fun MonitorScreen(viewModel: MonitorViewModel) {

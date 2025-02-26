@@ -29,6 +29,9 @@ jobs:
         
       - name: Проверить файлы перед сборкой
         run: ls -l
+
+      - name: Вывести содержимое build.gradle
+        run: cat $GITHUB_WORKSPAC/build.gradle
         
       - name: Очистить кэш Gradle
         run: rm -rf /.gradle/cashes 

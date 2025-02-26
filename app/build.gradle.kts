@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.monitoring" 
+    namespace = "com.example.monitoring"
     compileSdk = 34
 
     defaultConfig {

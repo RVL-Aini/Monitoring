@@ -32,8 +32,8 @@ jobs:
         run: ls -l
 
       - name: Дать права на выполнение gradlew
-        run: chmod +x $./gradlew
+        run: chmod +x $gradlew
 
       - name: Сборка проекта
         working-directory: app
-        run: $./gradlew assembleDebug --stacktrace
+        run: $gradlew assembleDebug --stacktrace

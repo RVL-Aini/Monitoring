@@ -44,8 +44,10 @@ fun MonitorScreen(viewModel: MonitorViewModel) {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun PreviewMonitorScreen() {
-    MonitorScreen(viewModel = MonitorViewModel())
+val fakeViewModel = remember { MonitorViewModel() }
+MonitorScreen(viewModel = fakeViewModel)
 }
+

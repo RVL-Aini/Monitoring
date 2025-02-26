@@ -34,7 +34,7 @@ jobs:
         run: cat build.gradle.kts
         
       - name: Очистить кэш Gradle
-        run: rm -rf /.gradle/cashes 
+        run: rm -rf /.gradle/cashes && rm -rf /.gradle/wrapper
         
       - name: Дать права на выполнение gradlew
         run: chmod +x $GITHUB_WORKSPACE/gradlew

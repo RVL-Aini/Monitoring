@@ -36,8 +36,8 @@ jobs:
       - name: Очистить кэш Gradle1
         run: rm -rf /.gradle/cashes && rm -rf /.gradle/wrapper
       
-      - name: Очистить кеш Gradle2
-        run: $GITHUB_WORKSPACE/gradlew clean --no-daemon
+    //  - name: Очистить кеш Gradle2
+    //    run: $GITHUB_WORKSPACE/gradlew clean --no-daemon
         
       - name: Дать права на выполнение gradlew
         run: chmod +x $GITHUB_WORKSPACE/gradlew

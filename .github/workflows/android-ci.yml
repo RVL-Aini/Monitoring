@@ -12,15 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Cache Gradle dependencies
-  uses: actions/cache@v3
-  with:
-    path: |
-      ~/.gradle/caches
-      ~/.gradle/wrapper
-    key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-    restore-keys: |
-      gradle-${{ runner.os }}-
 
       - name: Checkout кода
         uses: actions/checkout@v3

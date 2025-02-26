@@ -1,6 +1,11 @@
 buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        grablePluginPortal ()
+    }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.1.1'  // Проверь актуальность версии
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.21"
     }
 }

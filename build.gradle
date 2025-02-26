@@ -1,4 +1,8 @@
 buildscript {
+    repositories {
+        google()  // Репозиторий для Android Gradle Plugin
+        mavenCentral()  // Репозиторий для Kotlin и других библиотек
+    }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.1.1'  // Проверь актуальность версии
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0"

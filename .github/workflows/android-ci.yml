@@ -31,16 +31,13 @@ jobs:
         run: ls -l
 
       - name: Вывести содержимое build.gradle
-        run: cat $GITHUB_WORKSPAC/build.gradle
+        run: cat build.gradle
         
       - name: Очистить кэш Gradle
         run: rm -rf /.gradle/cashes 
         
       - name: Дать права на выполнение gradlew
         run: chmod +x $GITHUB_WORKSPACE/gradlew
-      
-      - name: Проверить содержимое build.gradle
-        run: cat build.gradle
         
       - name: Сборка проекта
         working-directory: app

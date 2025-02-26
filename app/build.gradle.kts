@@ -55,7 +55,6 @@ dependencies {
     implementation("androidx.compose.material:material:1.6.1")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.1")
     debugImplementation("androidx.compose.ui:ui-tooling:1.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
-
-
 }

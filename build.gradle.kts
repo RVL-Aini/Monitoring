@@ -15,6 +15,6 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
     }
 }
 
-java {
-toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+javaToolchains {
+languageVersion.set(JavaLanguageVersion.of(17))
 }

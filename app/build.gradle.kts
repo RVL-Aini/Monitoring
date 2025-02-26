@@ -35,7 +35,7 @@ android {
 }
 
     composeOptions {
-    kotlinCompilerExtensionVersion = "1.5.11"
+    kotlinCompilerExtensionVersion = "1.6.1"
 }
 
     kotlinOptions {
@@ -55,6 +55,7 @@ dependencies {
     implementation("androidx.compose.material:material:1.6.1")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.1")
     debugImplementation("androidx.compose.ui:ui-tooling:1.6.1")
-	implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+
 
 }

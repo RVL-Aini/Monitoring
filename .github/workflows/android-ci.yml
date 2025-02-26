@@ -1,4 +1,5 @@
 name: Android CI
+
 on:
   push:
     branches:
@@ -6,25 +7,38 @@ on:
   pull_request:
     branches:
       - main 
+      
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout кода
         uses: actions/checkout@v3
+        
       - name: Установить JDK
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
           java-version: '17'
+          
       - name: Установить Gradle
         uses: gradle/gradle-build-action@v2
+        
       - name: Проверить текущий путь
         run: pwd
+        
       - name: Проверить файлы перед сборкой
         run: ls -l
+        
+      - name: Очистить кэш Gradle
+        run: rm -rf ~/.gradle/cashes 
+        
       - name: Дать права на выполнение gradlew
         run: chmod +x $GITHUB_WORKSPACE/gradlew
+      
+      - name: Проверить содержимое build.gradle
+        run: cat $GITHUB_WORKSPACE/build.gradle
+        
       - name: Сборка проекта
         working-directory: app
         run: $GITHUB_WORKSPACE/gradlew assembleDebug --stacktrace

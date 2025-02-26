@@ -16,7 +16,7 @@ import com.example.monitor.viewmodel.MonitorViewModel
 import androidx.lifecycle.ViewModel
 
 @Composable
-fun MonitorScreen(viewModel: MonitorViewModel) {
+fun MonitorScreen(viewModel: MonitorViewModel.kt) {
     val context = LocalContext.current
     val websites by viewModel.websites.collectAsState()
 
@@ -48,7 +48,7 @@ fun MonitorScreen(viewModel: MonitorViewModel) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewMonitorScreen() {
-val fakeViewModel = remember { MonitorViewModel() }
+val fakeViewModel = remember { MonitorViewModel.kt() }
 MonitorScreen(viewModel = fakeViewModel)
 }
 

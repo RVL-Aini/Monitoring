@@ -35,4 +35,4 @@ jobs:
 
       - name: Сборка проекта
         working-directory: app
-        run: $GITHUB_WORKSPACE/gradlew assembleDebug
+        run: $GITHUB_WORKSPACE/gradlew assembleDebug --stacktrace

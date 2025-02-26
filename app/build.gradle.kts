@@ -1,9 +1,8 @@
 plugins {
-    id("com.android.application")
-    kotlin("android"){
-        jvmToolchain(17)
-    }
+    kotlin("android") version "1.9.24" apply false
+    id("com.android.application") version "8.1.1" apply false
 }
+
 
 android {
     namespace = "com.example.monitoring"
@@ -30,6 +29,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 

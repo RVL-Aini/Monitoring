@@ -13,5 +13,3 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Monitoring"
-include ':app'

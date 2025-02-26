@@ -1,4 +1,3 @@
-MonitorScreen.kt
 package com.example.monitor.ui
 
 import android.widget.Toast

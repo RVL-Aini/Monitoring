@@ -1,29 +1,33 @@
 plugins {
-    id("com.android.application") version "8.1.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.21" apply false
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    compileSdk 34
+    namespace = "com.example.monitoring" 
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.monitoring"
-        minSdk 21
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        minSdk = 21
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), ("proguard-rules.pro")
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }
 
 dependencies {
-    implementation ("androidx.core:core-ktx:1.12.0")
-    implementation ("androidx.appcompat:appcompat:1.6.1")
-    implementation ("com.google.android.material:material:1.10.0")
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.10.0")
 }

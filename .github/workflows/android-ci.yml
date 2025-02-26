@@ -36,9 +36,15 @@ jobs:
       - name: Очистить кэш Gradle1
         run: rm -rf /.gradle/cashes && rm -rf /.gradle/wrapper
       
+      - name: Очистить сборку перед компиляцией
+        run: $GITHUB_WORKSPACE/gradlew clean
+      
       - name: Дать права на выполнение gradlew
         run: chmod +x $GITHUB_WORKSPACE/gradlew
-        
+
+      - name: Вывести лог ошибки компиляции
+        run: cat app/build/reports/kotlin-compile.log || echo "Лог не найден"
+       
       - name: Сборка проекта
 #        working-directory: app
         run: $GITHUB_WORKSPACE/gradlew assembleDebug  --debug --info --stacktrace 

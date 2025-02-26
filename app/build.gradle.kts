@@ -32,5 +32,4 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.9.24"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.24")
-)
 }
